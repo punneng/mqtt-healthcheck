@@ -1,2 +1,13 @@
 # mqtt-healthcheck
-localhost:8080
+> $ npm install
+or yarn
+> $ npm run dev
+
+## optional
+### linebot
+require webhook and linebot account with .env file
+
+### healthcheck
+require redis
+
+and serve at http://localhost:8080
