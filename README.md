@@ -1,5 +1,5 @@
 # mqtt-healthcheck
-> $ npm install
+> $ yarn
 
 > $ npm run dev
 
