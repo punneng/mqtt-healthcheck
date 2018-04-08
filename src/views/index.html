@@ -1,0 +1,40 @@
+<html>
+  <head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/paho-mqtt/1.0.1/mqttws31.min.js" type="text/javascript"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.0/moment.min.js"></script>
+    <script src="/static/js/utils.js"></script>
+  </head>
+  <body>
+      <div style="width:50%;float:left">
+        <canvas id="canvas-LATTE-001"></canvas>
+        <canvas id="canvas-LATTE-003"></canvas>
+        <canvas id="canvas-LATTE-005"></canvas>
+        <canvas id="canvas-LATTE-007"></canvas>
+        <canvas id="canvas-LATTE-009"></canvas>
+      </div>
+      <div style="width:50%; float:left">
+        <canvas id="canvas-LATTE-002"></canvas>
+        <canvas id="canvas-LATTE-004"></canvas>
+        <canvas id="canvas-LATTE-006"></canvas>
+        <canvas id="canvas-LATTE-008"></canvas>
+        <canvas id="canvas-LATTE-010"></canvas>
+      </div>
+      <script>
+
+        window.myLine = {};
+        window.onload = function() {
+          renderGraph('LATTE-001');
+          renderGraph('LATTE-002');
+          renderGraph('LATTE-003');
+          renderGraph('LATTE-004');
+          renderGraph('LATTE-005');
+          renderGraph('LATTE-006');
+          renderGraph('LATTE-007');
+          renderGraph('LATTE-008');
+          renderGraph('LATTE-009');
+          renderGraph('LATTE-010');
+        };
+      </script>
+    </body>
+</html>
