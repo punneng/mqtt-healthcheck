@@ -5,7 +5,7 @@ import { lineClient } from './lineClient'
 const redisClient = redis.createClient();
 
 function start() {
-  const client = mqtt.connect('tcp://ip', {
+  const client = mqtt.connect('tcp://46.101.48.109:1883', {
     clientId: 'mqtt-healthcheck'
   })
   client.on('connect', function () {
@@ -19,7 +19,13 @@ function start() {
   client.on('message', function (topic, message) {
     // message is Buffer
     
-    const data = JSON.parse(message.toString())
+    let data = {}
+    try {
+      data = JSON.parse(message.toString())
+    } catch (err) {
+      console.log("error:", err)
+    }
+
     if (data.d) {
       const index = `mqtt-healthcheck-${data.d.myName}`
       redisClient.hmset(index, {
@@ -31,7 +37,6 @@ function start() {
       }, redisClient.print)
       if (parseInt(data.d.temperature) > 30) {
         console.log('tooo hot')
-
       }
     } else {
       console.log('Recieved: ' + String(message))
