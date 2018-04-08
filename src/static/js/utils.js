@@ -68,7 +68,7 @@ function renderGraph(deviceName) {
   window.myLine[deviceName] = new Chart(ctx, config);
 
   // Create a client instance
-  var client = new Paho.MQTT.Client("46.101.48.109", 9001, "realtime-js-demo-"+deviceName);
+  var client = new Paho.MQTT.Client("ip", 9001, "realtime-js-demo-"+deviceName);
 
   // called when the client connects
   function onConnect() {
